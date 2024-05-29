@@ -33,13 +33,13 @@ namespace Laba9.Tests
             string message = "Привет, мир"; // Строка сообщения для отправки
 
             _vkPage.GoToPage("https://vk.com/"); // Переход на страницу
-            Thread.Sleep(5000); // Ждем загрузки страницы
+            Thread.Sleep(10000); // Ждем загрузки страницы
 
             _vkPage.ClickMessageTab(); // Клик по вкладке Мессенджер
-            Thread.Sleep(2000); // Ждем появления контактов
+            Thread.Sleep(6000); // Ждем появления контактов
 
             _vkPage.ClickBySelectedContact(); // Клик по избранным контактам
-            Thread.Sleep(2000); // Ждем открытия чата
+            Thread.Sleep(6000); // Ждем открытия чата
 
             _vkPage.ClickOnTheInputField(); // Клик по полю ввода сообщения
             _vkPage.SendMesage(message); // Отправка сообщения
@@ -58,19 +58,19 @@ namespace Laba9.Tests
             string expectedStatus = "Отписаться"; // Ожидаемый статус кнопки после добавления в корзину
 
             _groupPage.GoToPage("https://vk.com/"); // Переход на страницу
-            Thread.Sleep(5000); // Ждем загрузки страницы
+            Thread.Sleep(10000); // Ждем загрузки страницы
 
             _groupPage.ClickGroupTab(); // Клик по вкладке Сообщества
-            Thread.Sleep(2000); // Ждем загрузки списка групп
+            Thread.Sleep(5000); // Ждем загрузки списка групп
 
             _groupPage.ClickOnTheGroup(); // Клик по группе Рифмач
-            Thread.Sleep(3000); // Ждем загрузки страницы группы
+            Thread.Sleep(5000); // Ждем загрузки страницы группы
 
             _groupPage.MoveMous(); // Движение мыши над кнопкой подписки
-            Thread.Sleep(2000); // Ждем появления кнопки подписки
+            Thread.Sleep(5000); // Ждем появления кнопки подписки
 
             _groupPage.ClickUnsub(); // Клик по кнопке Отписаться
-            Thread.Sleep(2000); // Ждем изменения статуса кнопки
+            Thread.Sleep(5000); // Ждем изменения статуса кнопки
 
             // Проверка статуса кнопки после подписки
             Assert.IsFalse(_groupPage.CheckSub().Contains(expectedStatus, StringComparison.OrdinalIgnoreCase));
